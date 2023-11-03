@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>こんにちは、{{ user }}</title>
+</head>
+
+<body>
+    <h1>ようこそ、{{ user }}さん!</h1>
+
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if condition %}
+    <p>条件が成り立っています。</p>
+    {% else %}
+    <p>条件が成り立っていません。</p>
+    {% endif %}
+
+    <p>日付: {{ date | strftime('%Y-%m-%d') }}</p>
+</body>
+
+</html>

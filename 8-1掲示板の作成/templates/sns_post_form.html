@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNS投稿画面</title>
+    <style>
+        /* Textbox style */
+        input[type="text"],
+        textarea {
+            border: none;
+            background-color: #f2f2f2;
+            width: 100%;
+            box-sizing: border-box;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SNS投稿画面</h1>
+        <form method="POST">
+            <label for="username">ユーザー名:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="postContent">投稿内容:</label>
+            <textarea id="postContent" name="postContent" rows="4" required></textarea><br>
+
+            <input type="submit" value="投稿する">
+        </form>
+    </div>
+    <script>
+        // Adjust textarea height automatically
+        function adjustTextAreaHeight() {
+            const textArea = document.getElementById("postContent");
+            textArea.style.height = "auto";
+            textArea.style.height = textArea.scrollHeight + "px";
+        }
+
+        // Automatically adjust on page load and when content changes
+        window.onload = function () {
+            adjustTextAreaHeight();
+        };
+
+        document.getElementById("postContent").addEventListener("input", function () {
+            adjustTextAreaHeight();
+        });
+    </script>
+</body>
+
+</html>

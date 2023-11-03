@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SNSタイムライン</title>
+    <style>
+        /* timeline style */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .timeline {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .post {
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .post-header {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .post-content {
+            margin-bottom: 10px;
+        }
+
+        .post-time {
+            color: #999;
+            font-size: 0.8em;
+        }
+
+        /*+ button style*/
+        .circle-container {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            background-color: grey;
+            border-radius: 50%;
+            overflow: hidden;
+            left: 50px;
+            bottom: 50px;
+            font-size: 35px;
+            color: #fff;
+            border: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="timeline">
+        <!-- timeline content -->
+        {% for post in timeline_data %}
+        <div class="post">
+            <div class="post-header">{{ post[0] }}</div>
+            <div class="post-content">{{ post[1] }}</div>
+            <div class="post-time">{{ post[2] }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    <a href="http://127.0.0.1:5000/post"><button class="circle-container" type="button">+</button></a>
+</body>
+
+</html>
