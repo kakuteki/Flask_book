@@ -5,7 +5,7 @@
 PythonDLページ
 https://www.python.org/downloads/
 
-AzureDLページ
+Azureページ
 https://azure.microsoft.com/ja-jp
 
 Docker HubDLページ
